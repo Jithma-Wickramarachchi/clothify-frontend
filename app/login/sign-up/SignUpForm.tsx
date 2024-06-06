@@ -1,4 +1,3 @@
-import { User } from '@/components/types/user';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ErrorMessage } from '@hookform/error-message';
 import Link from 'next/link';
@@ -10,7 +9,10 @@ const schema = z.object({
     email: z.string().email({ message: "* invalid email address" }),
     password: z.string().min(8, { message: "* password must be at least 8 characters long" }),
     retypePassword: z.string().min(8, { message: "* password must be at least 8 characters long" })
-});
+}).refine(data => data.password === data.retypePassword, {
+    message: "Passwords don't match",
+    path: ["retypePassword"],
+  });
 
 const SignUpForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
