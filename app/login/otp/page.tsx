@@ -3,7 +3,6 @@
 import React from "react";
 import { BackgroundGradient } from "../../../components/ui/BackgroundGradient";
 import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
-import Link from "next/link";
 
 export default function Otp() {
     return (
