@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
-import { BackgroundGradient } from "../../../components/ui/BackgroundGradient";
+import { BackgroundGradient } from "../../../components/ui/background-gradient";
 import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
 
 export default function ChangePassword() {

@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
-import { BackgroundGradient } from "../../../components/ui/BackgroundGradient";
-import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
+import { BackgroundGradient } from "../../../components/ui/background-gradient";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Link from "next/link";
 
 export default function Login() {

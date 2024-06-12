@@ -1,10 +1,12 @@
+"use client";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ErrorMessage } from '@hookform/error-message';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import z from "zod";
 import { User } from '@/components/types/user';
+import cookie from 'js-cookie';
 
 const schema = z.object({
   username: z.string()
@@ -48,6 +50,7 @@ const SignUpForm: React.FC = () => {
       if (response.ok) {
         const result = await response.json();
         console.log('Success:', result);
+        cookie.set("token", result, {expires: 1/24, secure:true});
       } else {
         console.error('Error:', response.statusText);
       }
@@ -55,7 +58,6 @@ const SignUpForm: React.FC = () => {
       console.error('Error:', error);
     }
   };
-
   return (
     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit(submit)}>
       <div>

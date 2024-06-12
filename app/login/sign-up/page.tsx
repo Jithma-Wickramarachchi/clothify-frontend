@@ -1,8 +1,7 @@
-"use client";
 import React from "react";
-import { BackgroundGradient } from "../../../components/ui/BackgroundGradient";
-import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
-import SignUpForm from "./SignUpForm";
+import { BackgroundGradient } from "../../../components/ui/background-gradient";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import SignUpForm from "./sign-up-form";
 
 export default function Signup() {
   return (
